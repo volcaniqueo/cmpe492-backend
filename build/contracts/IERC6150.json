@@ -1,0 +1,749 @@
+{
+  "contractName": "IERC6150",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "minter",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "parentId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Minted",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "parentOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "parentId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "childrenOf",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "childrenIds",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isRoot",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isLeaf",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"minter\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"parentId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Minted\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"childrenOf\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"childrenIds\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"isLeaf\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"isRoot\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"parentOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"parentId\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"Minted(address,address,uint256,uint256)\":{\"params\":{\"minter\":\"The address of minter\",\"parentId\":\"The id of parent token, if it's zero, it means minted `tokenId` is a root token.\",\"to\":\"The address received token\",\"tokenId\":\"The id of minted token, required to be greater than zero\"}}},\"kind\":\"dev\",\"methods\":{\"childrenOf(uint256)\":{\"params\":{\"tokenId\":\"The parent token\"},\"returns\":{\"childrenIds\":\"The array of children tokens\"}},\"isLeaf(uint256)\":{\"params\":{\"tokenId\":\"The token want to be checked\"},\"returns\":{\"_0\":\"Return `true` if it is a leaf token; if not, return `false`\"}},\"isRoot(uint256)\":{\"params\":{\"tokenId\":\"The token want to be checked\"},\"returns\":{\"_0\":\"Return `true` if it is a root token; if not, return `false`\"}},\"parentOf(uint256)\":{\"params\":{\"tokenId\":\"The child token\"},\"returns\":{\"parentId\":\"The Parent token found\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Minted(address,address,uint256,uint256)\":{\"notice\":\"Emitted when `tokenId` token under `parentId` is minted.\"}},\"kind\":\"user\",\"methods\":{\"childrenOf(uint256)\":{\"notice\":\"Get the children tokens of `tokenId` token.\"},\"isLeaf(uint256)\":{\"notice\":\"Check the `tokenId` token if it is a leaf token.\"},\"isRoot(uint256)\":{\"notice\":\"Check the `tokenId` token if it is a root token.\"},\"parentOf(uint256)\":{\"notice\":\"Get the parent token of `tokenId` token.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/interfaces/IERC6150.sol\":\"IERC6150\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/interfaces/IERC6150.sol\":{\"keccak256\":\"0xaf44c7359f21a763fa479fefd754355eb12c3fa6ee6be7732e4ee10f8427e21a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f4857be055459c0e34a89852dc7cf890ef685dd1c8f0b42eb0b5562049dfbfaf\",\"dweb:/ipfs/QmQKsQiqa6NoVP6ZL4FozjTG7MZsmj39xxsDi9yFvwyKhh\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\n\n// Note: the ERC-165 identifier for this interface is 0x897e2c73.\ninterface IERC6150 /* is IERC721, IERC165 */ {\n    /**\n     * @notice Emitted when `tokenId` token under `parentId` is minted.\n     * @param minter The address of minter\n     * @param to The address received token\n     * @param parentId The id of parent token, if it's zero, it means minted `tokenId` is a root token.\n     * @param tokenId The id of minted token, required to be greater than zero\n     */\n    event Minted(\n        address indexed minter,\n        address indexed to,\n        uint256 parentId,\n        uint256 tokenId\n    );\n\n    /**\n     * @notice Get the parent token of `tokenId` token.\n     * @param tokenId The child token\n     * @return parentId The Parent token found\n     */\n    function parentOf(uint256 tokenId) external view returns (uint256 parentId);\n\n    /**\n     * @notice Get the children tokens of `tokenId` token.\n     * @param tokenId The parent token\n     * @return childrenIds The array of children tokens\n     */\n    function childrenOf(\n        uint256 tokenId\n    ) external view returns (uint256[] memory childrenIds);\n\n    /**\n     * @notice Check the `tokenId` token if it is a root token.\n     * @param tokenId The token want to be checked\n     * @return Return `true` if it is a root token; if not, return `false`\n     */\n    function isRoot(uint256 tokenId) external view returns (bool);\n\n    /**\n     * @notice Check the `tokenId` token if it is a leaf token.\n     * @param tokenId The token want to be checked\n     * @return Return `true` if it is a leaf token; if not, return `false`\n     */\n    function isLeaf(uint256 tokenId) external view returns (bool);\n}",
+  "sourcePath": "/Users/volkan/Desktop/cmpe492-backend/interfaces/IERC6150.sol",
+  "ast": {
+    "absolutePath": "project:/interfaces/IERC6150.sol",
+    "exportedSymbols": {
+      "IERC6150": [
+        787
+      ]
+    },
+    "id": 788,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 742,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IERC6150",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 787,
+        "linearizedBaseContracts": [
+          787
+        ],
+        "name": "IERC6150",
+        "nameLocation": "140:8:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 743,
+              "nodeType": "StructuredDocumentation",
+              "src": "181:353:2",
+              "text": " @notice Emitted when `tokenId` token under `parentId` is minted.\n @param minter The address of minter\n @param to The address received token\n @param parentId The id of parent token, if it's zero, it means minted `tokenId` is a root token.\n @param tokenId The id of minted token, required to be greater than zero"
+            },
+            "eventSelector": "03f17d66ad3bf18e9412eb06582908831508cdb9b8da9cddb1431f645a5b8632",
+            "id": 753,
+            "name": "Minted",
+            "nameLocation": "545:6:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 745,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "minter",
+                  "nameLocation": "577:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 753,
+                  "src": "561:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "561:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 747,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "609:2:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 753,
+                  "src": "593:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 746,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "593:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 749,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "parentId",
+                  "nameLocation": "629:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 753,
+                  "src": "621:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 748,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 751,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "655:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 753,
+                  "src": "647:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 750,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "647:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "551:117:2"
+            },
+            "src": "539:130:2"
+          },
+          {
+            "documentation": {
+              "id": 754,
+              "nodeType": "StructuredDocumentation",
+              "src": "675:152:2",
+              "text": " @notice Get the parent token of `tokenId` token.\n @param tokenId The child token\n @return parentId The Parent token found"
+            },
+            "functionSelector": "cfa3c132",
+            "id": 761,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "parentOf",
+            "nameLocation": "841:8:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 756,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "858:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "850:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 755,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "849:17:2"
+            },
+            "returnParameters": {
+              "id": 760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 759,
+                  "mutability": "mutable",
+                  "name": "parentId",
+                  "nameLocation": "898:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "890:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:18:2"
+            },
+            "scope": 787,
+            "src": "832:76:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 762,
+              "nodeType": "StructuredDocumentation",
+              "src": "914:165:2",
+              "text": " @notice Get the children tokens of `tokenId` token.\n @param tokenId The parent token\n @return childrenIds The array of children tokens"
+            },
+            "functionSelector": "6f19951c",
+            "id": 770,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "childrenOf",
+            "nameLocation": "1093:10:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 764,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1121:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 770,
+                  "src": "1113:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 763,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1113:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1103:31:2"
+            },
+            "returnParameters": {
+              "id": 769,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 768,
+                  "mutability": "mutable",
+                  "name": "childrenIds",
+                  "nameLocation": "1175:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 770,
+                  "src": "1158:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 766,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1158:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 767,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1158:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1157:30:2"
+            },
+            "scope": 787,
+            "src": "1084:104:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 771,
+              "nodeType": "StructuredDocumentation",
+              "src": "1194:201:2",
+              "text": " @notice Check the `tokenId` token if it is a root token.\n @param tokenId The token want to be checked\n @return Return `true` if it is a root token; if not, return `false`"
+            },
+            "functionSelector": "e527b966",
+            "id": 778,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isRoot",
+            "nameLocation": "1409:6:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 773,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1424:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 778,
+                  "src": "1416:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 772,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1416:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1415:17:2"
+            },
+            "returnParameters": {
+              "id": 777,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 776,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 778,
+                  "src": "1456:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 775,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1456:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1455:6:2"
+            },
+            "scope": 787,
+            "src": "1400:62:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 779,
+              "nodeType": "StructuredDocumentation",
+              "src": "1468:201:2",
+              "text": " @notice Check the `tokenId` token if it is a leaf token.\n @param tokenId The token want to be checked\n @return Return `true` if it is a leaf token; if not, return `false`"
+            },
+            "functionSelector": "cce3c13b",
+            "id": 786,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isLeaf",
+            "nameLocation": "1683:6:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 782,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 781,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1698:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 786,
+                  "src": "1690:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 780,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1690:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1689:17:2"
+            },
+            "returnParameters": {
+              "id": 785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 784,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 786,
+                  "src": "1730:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 783,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1730:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1729:6:2"
+            },
+            "scope": 787,
+            "src": "1674:62:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 788,
+        "src": "130:1608:2",
+        "usedErrors": [],
+        "usedEvents": [
+          753
+        ]
+      }
+    ],
+    "src": "39:1699:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2024-06-05T15:10:49.944Z",
+  "devdoc": {
+    "events": {
+      "Minted(address,address,uint256,uint256)": {
+        "params": {
+          "minter": "The address of minter",
+          "parentId": "The id of parent token, if it's zero, it means minted `tokenId` is a root token.",
+          "to": "The address received token",
+          "tokenId": "The id of minted token, required to be greater than zero"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "childrenOf(uint256)": {
+        "params": {
+          "tokenId": "The parent token"
+        },
+        "returns": {
+          "childrenIds": "The array of children tokens"
+        }
+      },
+      "isLeaf(uint256)": {
+        "params": {
+          "tokenId": "The token want to be checked"
+        },
+        "returns": {
+          "_0": "Return `true` if it is a leaf token; if not, return `false`"
+        }
+      },
+      "isRoot(uint256)": {
+        "params": {
+          "tokenId": "The token want to be checked"
+        },
+        "returns": {
+          "_0": "Return `true` if it is a root token; if not, return `false`"
+        }
+      },
+      "parentOf(uint256)": {
+        "params": {
+          "tokenId": "The child token"
+        },
+        "returns": {
+          "parentId": "The Parent token found"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "Minted(address,address,uint256,uint256)": {
+        "notice": "Emitted when `tokenId` token under `parentId` is minted."
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "childrenOf(uint256)": {
+        "notice": "Get the children tokens of `tokenId` token."
+      },
+      "isLeaf(uint256)": {
+        "notice": "Check the `tokenId` token if it is a leaf token."
+      },
+      "isRoot(uint256)": {
+        "notice": "Check the `tokenId` token if it is a root token."
+      },
+      "parentOf(uint256)": {
+        "notice": "Get the parent token of `tokenId` token."
+      }
+    },
+    "version": 1
+  }
+}
